@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Lost Forest</title>
+    <meta name="The Lost Forest" content="The Lost Forest">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.js"></script>
+    <script src="bake-vertex-light.js"></script> 
+  </head>
+  <body>
+
+    <a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">
+     <a-assets> 
+      <a-asset-item id="xmf-mtl" src="xmf.mtl"></a-asset-item>
+      <a-asset-item id="xmf-obj" src="xmf.obj"></a-asset-item>
+      <a-asset-item id="leaf-mtl" src="leaf.mtl"></a-asset-item>
+      <a-asset-item id="leaf-obj" src="leaf.obj"></a-asset-item>
+      <img id="xmfimg1" src="FACEMAN2017-11-04_02-56-04.jpg">
+      <img id="xmfimg2" src="XMF-Ducky-9-16.jpg">
+     </a-assets>
+
+    
+     
+     <a-entity camera position="0 10 0" wasd-controls="fly: true" look-controls></a-entity>
+    <a-light id="light1" type="directional" intensity="6000" position="150 15 150"></a-light>
+
+    <a-entity id="thescene" position="25 0 -35">
+     
+    <a-entity obj-model="obj: url(xmf.obj); mtl: url(xmf.mtl)" scale="4.5 4.5 4.5" position="0 0.5 0" n-mesh-collider="type: environment; convex: false" geometry="buffer: false" bake-vertex-light></a-entity>
+
+    <a-cylinder scale="2 100 2" position="-2 0 -30" rotation="0 -15 -55" material="color: yellow; opacity: 0.005" altspace-cursor-collider="enabled: false"></a-cylinder>
+    <a-cylinder scale="2 100 -2" position="-2 0 -30" rotation="0 -15 -55" material="color: yellow; opacity: 0.005" altspace-cursor-collider="enabled: false"></a-cylinder>
+
+    <a-plane scale="18 12" position="35.4 8.5 23" rotation="0 -90 0" src="#xmfimg1" altspace-cursor-collider="enabled: false"></a-plane>
+    <a-plane scale="4 6" position="6 5.1 9.25" rotation="0 0 0" src="#xmfimg2" altspace-cursor-collider="enabled: false"></a-plane>
+
+    <a-entity id="song" position="0 1000 0" n-sound="src: lbop.wav; loop: true; autoplay: true; volume: 0.5; rolloff: cosine; minDistance: 1; maxDistance: 1100"></a-entity>
+
+    </a-entity>  
+
+
+  </a-entity>
+
+  <a-entity id="leafgroup1" position="11 0 -24">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="4 0 -45">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="18 0 -63">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="39 0 -70">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity>
+</a-entity>
+
+  <a-entity id="leafgroup1" position="52 0 -41">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity>
+</a-entity>
+</a-entity>
+
+
+
+
+
+  <a-entity position="4 0 4">
+    <a-entity id="leafgroup1" position="11 0 -24" rotaion="0 46 0">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="4 0 -45" rotaion="0 46 0">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="18 0 -63" rotaion="0 46 0">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="39 0 -70" rotaion="0 46 0">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  <a-entity id="leafgroup1" position="52 0 -41" rotaion="0 46 0">
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 -12" to="-9 -1 -12"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="10500" fill="forwards" repeat="indefinite" easing="linear" from="10 19 -7" to="10 -1 -7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="1751" fill="forwards" repeat="indefinite" easing="linear" from="-9 19 8" to="-9 -1 8"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1501" fill="forwards" repeat="indefinite" easing="linear" from="8 19 7" to="8 -1 7"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="501" fill="forwards" repeat="indefinite" easing="linear" from="-4 19 -2" to="-4 -1 -2"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="21000" delay="751" fill="forwards" repeat="indefinite" easing="linear" from="3 19 6" to="3 -1 6"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="15000" delay="1001" fill="forwards" repeat="indefinite" easing="linear" from="-5 19 3" to="-5 -1 3"></a-animation>
+        <a-animation attribute="rotation" dur="5000" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+      </a-entity>
+      <a-entity obj-model="obj: url(leaf.obj); mtl: url(leaf.mtl)" scale="0.245 0.245 0.245" position="0 0 0" rotation="10 35 85">
+        <a-animation id="leaf1a" attribute="position" dur="18000" delay="1251" fill="forwards" repeat="indefinite" easing="linear" from="4 19 1" to="4 -1 1"></a-animation>
+        <a-animation attribute="rotation" dur="2502" delay="0" fill="forwards" repeat="indefinite" easing="linear" from="0 0 180" to="0 360 -180"></a-animation>
+  </a-entity></a-entity>
+
+  </a-entity>
+
+   <a-sky id="skybox" position="0 0 0" radius="2500" rotation="0 90 0" src="sky1.jpg" segments-width="16" segments-height="16"></a-sky>
+     </a-scene>
+     
+      </body>
+</html>
